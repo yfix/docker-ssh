@@ -6,4 +6,6 @@ ssh:
   ports:
     - "30122:22"
   volumes:
-    - ./container-files/root/.ssh/id_rsa:/root/.ssh/id_rsa:ro
+    - ./container-files/config/authorized_keys:/config/authorized_keys:ro
+    - ./container-files/etc/supervisor/conf.d/sshd.conf:/etc/supervisor/conf.d/sshd.conf
+    - ./container-files/var/log/supervisor:/var/log/supervisor
