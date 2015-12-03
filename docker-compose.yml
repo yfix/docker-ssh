@@ -1,9 +1,9 @@
 ssh:
   image: yfix/ssh
-  container_name: yfix_ssh
-  ports:
-    - 30122:22
+  container_name: yfix_test_ssh
   restart: always
-  volumes:
-    - ./container-files/root/.ssh:/root/.ssh
-    - ./container-files/etc/ssh/sshd_config:/etc/ssh/sshd_config
+  privileged: true
+  ports:
+    - "30122:22"
+#  volumes:
+#    - ./container-files/root/.ssh/id_rsa:/root/.ssh/id_rsa:ro

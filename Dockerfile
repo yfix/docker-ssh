@@ -24,7 +24,9 @@ RUN apt-get update && apt-get install -y \
   && sed -i -r 's/.?UsePAM.+/UsePAM no/' /etc/ssh/sshd_config \
   && sed -i -r 's/.?ChallengeResponseAuthentication.+/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config \
   && sed -i -r 's/.?PermitRootLogin.+/PermitRootLogin yes/' /etc/ssh/sshd_config \
-  && echo -e "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+  && echo -e "StrictHostKeyChecking no" >> /etc/ssh/ssh_config \
+  \
+  && mkdir -pv /root/.ssh && chmod -v 0700 /root/.ssh
 
 COPY container-files /
 
