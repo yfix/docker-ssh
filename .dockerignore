@@ -1,2 +1,2 @@
-container-files/config/authorized_keys
-container-files/var/*
+docker/config/authorized_keys
+docker/var/*

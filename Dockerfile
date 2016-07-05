@@ -27,6 +27,6 @@ RUN apt-get update && apt-get install -y \
   && sed -i -r 's/.?PermitRootLogin.+/PermitRootLogin yes/' /etc/ssh/sshd_config \
   && echo -e "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
-COPY container-files /
+COPY docker /
 
 EXPOSE 22
